@@ -14,7 +14,7 @@ Once the dependencies are installed you can then run the following commands to e
 2. Once the docker containers are running you can then execute the test script via the following maven command:
 > mvn clean verify -Dbrowser=\<browser>
   
-  <browser> value can either be chrome or firefox. If this argument is not passed, the browser will default to chrome. 
+  \<browser> value can either be chrome or firefox. If this argument is not passed, the browser will default to chrome. 
 
 ## Test Execution Report
 
