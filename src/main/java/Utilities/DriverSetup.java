@@ -2,10 +2,12 @@ package Utilities;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 public class DriverSetup {
@@ -16,17 +18,17 @@ public class DriverSetup {
     public WebDriver initialiseDriver() throws MalformedURLException {
 
         if (browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-            driver = new ChromeDriver();
-           // ChromeOptions chromeOptions = new ChromeOptions();
-           // driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub/"),chromeOptions);
+          //  System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+          //  driver = new ChromeDriver();
+            ChromeOptions chromeOptions = new ChromeOptions();
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub/"),chromeOptions);
 
 
         } else if (browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
-            driver = new FirefoxDriver();
-            //FirefoxOptions firefoxOptions = new FirefoxOptions();
-           // WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub/"), firefoxOptions);
+         //   System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+         //   driver = new FirefoxDriver();
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+            WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub/"), firefoxOptions);
         } else {
             Assert.fail("Browser " + browser + " is not supported");
         }
