@@ -1,0 +1,28 @@
+target/
+
+# Ignore dynamically generated files...
+src/main/resources/git.properties
+.logging.txt
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+
+### Ignore Mac files
+.DS_Store
+
+### Ignore temporary/backup files
+pom.xml.bak
