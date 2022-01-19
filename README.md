@@ -12,7 +12,9 @@ Once the dependencies are installed you can then run the following commands to e
 >docker run -d -p 4445:4444 --shm-size="2g" selenium/standalone-firefox:4.1.1-20211217
 
 2. Once the docker containers are running you can then execute the test script via the following maven command:
-> mvn clean verify
+> mvn clean verify -Dbrowser=<browser>
+  
+  <browser> value can either be chrome or firefox. If this argument is not passed, the browser will default to chrome. 
 
 ## Test Execution Report
 
